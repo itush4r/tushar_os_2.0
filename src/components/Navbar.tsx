@@ -2,8 +2,7 @@
 
 import { motion } from "motion/react";
 import { PERSONAL_INFO } from "../constants";
-import { Github, Linkedin, Mail, Menu, X, Terminal } from "lucide-react";
-import { useState } from "react";
+import { Terminal } from "lucide-react";
 
 export default function Navbar() {
   const navLinks = [

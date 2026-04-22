@@ -1,8 +1,7 @@
 "use client";
 
-import { motion, useMotionValue, useSpring, useTransform } from "motion/react";
-import { PERSONAL_INFO } from "../constants";
-import { ArrowRight, FileText, ChevronRight, Activity, Cpu, Hexagon } from "lucide-react";
+import { motion, useMotionValue, useSpring } from "motion/react";
+import { ChevronRight, Activity, Cpu, Hexagon } from "lucide-react";
 import { useEffect, useState } from "react";
 
 const SYSTEM_LOGS = [

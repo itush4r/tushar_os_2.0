@@ -50,9 +50,10 @@ export default function ExperienceAndContact() {
     const result = ContactSchema.safeParse(formData);
 
     if (!result.success) {
-      const formattedErrors: any = {};
+      const formattedErrors: Partial<Record<keyof ContactInput, string>> = {};
       result.error.issues.forEach(issue => {
-        formattedErrors[issue.path[0]] = issue.message;
+        const key = issue.path[0] as keyof ContactInput;
+        formattedErrors[key] = issue.message;
       });
       setErrors(formattedErrors);
       setIsSubmitting(false);

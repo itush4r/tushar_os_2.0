@@ -2,7 +2,7 @@
 
 import { motion } from "motion/react";
 import { PROFESSIONAL_PROJECTS, PERSONAL_PROJECTS, TECH_STACK } from "../constants";
-import { ExternalLink, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 export default function ProjectsAndStack() {
   const ProjectGrid = ({ projects }: { projects: typeof PROFESSIONAL_PROJECTS }) => (
