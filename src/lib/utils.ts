@@ -6,7 +6,6 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 // Simple RudderStack tracker mock/setup for demo
-export const trackEvent = (event: string, properties?: any) => {
+export const trackEvent = (event: string, properties?: Record<string, unknown>) => {
   console.log(`[RudderStack] Event: ${event}`, properties);
-  // In a real app: rudderstack.track(event, properties);
 };

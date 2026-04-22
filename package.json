@@ -7,12 +7,11 @@
     "dev": "next dev --port 3000",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "eslint"
   },
   "dependencies": {
     "@ai-sdk/google": "^3.0.64",
     "@google/genai": "^1.29.0",
-    "@google/generative-ai": "^0.24.1",
     "@tailwindcss/postcss": "^4.2.4",
     "ai": "^6.0.168",
     "clsx": "^2.1.1",
@@ -28,10 +27,10 @@
     "zod": "^4.3.6"
   },
   "devDependencies": {
+    "@eslint/eslintrc": "^3.2.0",
     "@types/node": "^22.14.0",
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
-    "autoprefixer": "^10.4.21",
     "eslint": "^9.0.0",
     "eslint-config-next": "^15.1.7",
     "tailwindcss": "^4.1.14",

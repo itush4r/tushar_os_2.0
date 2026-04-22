@@ -1,10 +1,10 @@
 "use client";
 
-import Navbar from "../components/Navbar";
-import Hero from "../components/Hero";
-import StatsAndAbout from "../components/StatsAndAbout";
-import ProjectsAndStack from "../components/ProjectsAndStack";
-import ExperienceAndContact from "../components/ExperienceAndContact";
+import Navbar from "@/components/Navbar";
+import Hero from "@/components/Hero";
+import StatsAndAbout from "@/components/StatsAndAbout";
+import ProjectsAndStack from "@/components/ProjectsAndStack";
+import ExperienceAndContact from "@/components/ExperienceAndContact";
 import { motion, useScroll, useSpring } from "motion/react";
 
 export default function Home() {
