@@ -1,16 +1,13 @@
-/**
- * @license
- * SPDX-License-Identifier: Apache-2.0
- */
+"use client";
 
-import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
-import StatsAndAbout from "./components/StatsAndAbout";
-import ProjectsAndStack from "./components/ProjectsAndStack";
-import ExperienceAndContact from "./components/ExperienceAndContact";
+import Navbar from "../components/Navbar";
+import Hero from "../components/Hero";
+import StatsAndAbout from "../components/StatsAndAbout";
+import ProjectsAndStack from "../components/ProjectsAndStack";
+import ExperienceAndContact from "../components/ExperienceAndContact";
 import { motion, useScroll, useSpring } from "motion/react";
 
-export default function App() {
+export default function Home() {
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, {
     stiffness: 100,
@@ -34,16 +31,6 @@ export default function App() {
         <ProjectsAndStack />
         <ExperienceAndContact />
       </main>
-
-      {/* Global Background Noise / Texture (Subtle) */}
-      <div className="fixed inset-0 pointer-events-none z-[-1] opacity-[0.03] animate-pulse">
-        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-          <filter id="noise">
-            <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch" />
-          </filter>
-          <rect width="100%" height="100%" filter="url(#noise)" />
-        </svg>
-      </div>
 
       {/* Perspective background blobs */}
       <div className="fixed top-0 left-0 w-full h-full -z-[2] overflow-hidden pointer-events-none">

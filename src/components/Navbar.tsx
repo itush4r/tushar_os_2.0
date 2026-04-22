@@ -1,3 +1,5 @@
+"use client";
+
 import { motion } from "motion/react";
 import { PERSONAL_INFO } from "../constants";
 import { Github, Linkedin, Mail, Menu, X, Terminal } from "lucide-react";

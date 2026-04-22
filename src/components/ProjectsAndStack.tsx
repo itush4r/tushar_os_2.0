@@ -1,3 +1,5 @@
+"use client";
+
 import { motion } from "motion/react";
 import { PROFESSIONAL_PROJECTS, PERSONAL_PROJECTS, TECH_STACK } from "../constants";
 import { ExternalLink, ArrowRight } from "lucide-react";
@@ -49,7 +51,7 @@ export default function ProjectsAndStack() {
       <section>
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <div>
-            <div className="font-mono text-[10px] text-cyan-500 mb-2">// DIRECTORY: /PROJECTS/STATION_A</div>
+            <div className="font-mono text-[10px] text-cyan-500 mb-2">{"//"} DIRECTORY: /PROJECTS/STATION_A</div>
             <h2 className="text-4xl md:text-8xl font-black mb-4 tracking-tighter uppercase italic">Professional</h2>
           </div>
           <div className="text-zinc-600 font-mono text-xs uppercase tracking-widest hidden md:block">
@@ -63,7 +65,7 @@ export default function ProjectsAndStack() {
       <section>
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <div>
-            <div className="font-mono text-[10px] text-purple-500 mb-2">// DIRECTORY: /PROJECTS/STATION_B</div>
+            <div className="font-mono text-[10px] text-purple-500 mb-2">{"//"} DIRECTORY: /PROJECTS/STATION_B</div>
             <h2 className="text-4xl md:text-8xl font-black mb-4 tracking-tighter uppercase italic text-glow-purple">Personal</h2>
           </div>
           <div className="text-zinc-600 font-mono text-xs uppercase tracking-widest hidden md:block">

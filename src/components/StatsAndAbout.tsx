@@ -1,3 +1,5 @@
+"use client";
+
 import { motion } from "motion/react";
 import { STATS } from "../constants";
 
@@ -16,7 +18,7 @@ export default function StatsAndAbout() {
             className="hud-card p-10 border border-white/5 flex flex-col gap-4"
           >
             <div className="font-mono text-[10px] text-cyan-500 uppercase tracking-widest">
-              // DATA_FIELD_{i+1}
+              {"//"} DATA_FIELD_{i+1}
             </div>
             <div className="text-5xl font-black text-white text-glow-cyan">
               {stat.value}
@@ -24,7 +26,6 @@ export default function StatsAndAbout() {
             <div className="text-xs text-zinc-500 font-mono tracking-tighter">
               {stat.label}
             </div>
-            <div className="scan-bar opacity-20" />
           </motion.div>
         ))}
       </section>
@@ -62,7 +63,7 @@ export default function StatsAndAbout() {
             My work collapses the distance between complex data and intuitive human interaction.
           </p>
           <p className="text-base text-zinc-500 font-mono italic">
-            "We aren't just building software; we are building the substrate for the future of digital intelligence."
+            &quot;We aren&apos;t just building software; we are building the substrate for the future of digital intelligence.&quot;
           </p>
         </motion.div>
       </section>
