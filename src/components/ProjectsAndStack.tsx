@@ -10,9 +10,10 @@ export default function ProjectsAndStack() {
       {projects.map((project, i) => (
         <motion.div 
           key={i}
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ delay: i * 0.1, duration: 0.6, ease: "easeOut" }}
           className="group relative bg-[#020202] p-12 md:p-16 hover:bg-zinc-900/40 transition-all duration-500 overflow-hidden"
         >
           <div className="absolute top-0 left-0 w-[1px] h-full bg-cyan-500/0 group-hover:bg-cyan-500/50 transition-all" />

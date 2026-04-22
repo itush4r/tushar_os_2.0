@@ -11,10 +11,10 @@ export default function StatsAndAbout() {
         {STATS.map((stat, i) => (
           <motion.div 
             key={i}
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: i * 0.1 }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ delay: i * 0.1, duration: 0.8, ease: "easeOut" }}
             className="hud-card p-10 border border-white/5 flex flex-col gap-4"
           >
             <div className="font-mono text-[10px] text-cyan-500 uppercase tracking-widest">
@@ -33,9 +33,10 @@ export default function StatsAndAbout() {
       {/* About Summary */}
       <section className="grid md:grid-cols-2 gap-20 items-center">
         <motion.div
-           initial={{ opacity: 0, x: -50 }}
+           initial={{ opacity: 0, x: -30 }}
            whileInView={{ opacity: 1, x: 0 }}
-           viewport={{ once: true }}
+           viewport={{ once: true, margin: "-100px" }}
+           transition={{ duration: 0.8, ease: "easeOut" }}
            className="relative"
         >
           <div className="font-mono text-cyan-500 text-xs mb-4">[[ NODE_PROFILE ]]</div>
@@ -53,9 +54,10 @@ export default function StatsAndAbout() {
         </motion.div>
 
         <motion.div
-           initial={{ opacity: 0, x: 50 }}
+           initial={{ opacity: 0, x: 30 }}
            whileInView={{ opacity: 1, x: 0 }}
-           viewport={{ once: true }}
+           viewport={{ once: true, margin: "-100px" }}
+           transition={{ duration: 0.8, ease: "easeOut" }}
            className="space-y-8 font-light text-zinc-400 text-xl leading-relaxed border-l border-white/5 pl-10"
         >
           <p>
