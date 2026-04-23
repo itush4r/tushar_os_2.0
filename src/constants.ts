@@ -6,8 +6,8 @@ export const PERSONAL_INFO = {
   headline: "Full Stack Engineer building AI-powered products at scale.",
   subheadline: "Specializing in high-performance web systems and seamless AI integrations.",
   email: "tushar8650@outlook.com",
-  linkedin: "https://linkedin.com/in/tushar8650", // Placeholder if not provided, assuming typical pattern
-  github: "https://github.com/tushar8650",     // Placeholder
+  linkedin: "https://www.linkedin.com/in/itush4rr",
+  github: "https://github.com/itush4r",
 };
 
 export const STATS = [
@@ -50,18 +50,11 @@ export const PROFESSIONAL_PROJECTS = [
 
 export const PERSONAL_PROJECTS = [
   {
-    title: "Neural Node Runner",
-    description: "A distributed system for running local LLMs across multiple low-power devices with automatic load balancing.",
-    tags: ["Rust", "Wasm", "WebRTC", "P2P"],
-    link: "#",
-    metric: "Experimental"
-  },
-  {
-    title: "Semantic Search Engine",
-    description: "Vector-based exploration tool for technical documentation using RAG architecture and high-dimensional embeddings.",
-    tags: ["Python", "Pinecone", "LangChain", "FastAPI"],
-    link: "#",
-    metric: "Open Source"
+    title: "BH4i — Telegram AI Assistant",
+    description: "A personal AI assistant on Telegram. Connects Gmail/Outlook/IMAP accounts, delivers personalised news, ingests PDFs/DOCX/XLSX/images for context-aware chat, and ships a daily briefing. Also drives Android phones via a ReAct agent loop with Gemini Vision over an ADB bridge. Encrypted credential storage, per-user token quotas, rate limiting, and a web admin dashboard.",
+    tags: ["Next.js", "Gemini", "MongoDB", "Vercel AI SDK", "ADB"],
+    link: "https://bh4i-bot.vercel.app",
+    metric: "Live"
   }
 ];
 

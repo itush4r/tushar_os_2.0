@@ -5,44 +5,59 @@ import { PROFESSIONAL_PROJECTS, PERSONAL_PROJECTS, TECH_STACK } from "../constan
 import { ArrowRight } from "lucide-react";
 
 export default function ProjectsAndStack() {
-  const ProjectGrid = ({ projects }: { projects: typeof PROFESSIONAL_PROJECTS }) => (
-    <div className="grid md:grid-cols-2 gap-px bg-white/5 border border-white/5 overflow-hidden">
-      {projects.map((project, i) => (
-        <motion.div 
-          key={i}
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-50px" }}
-          transition={{ delay: i * 0.1, duration: 0.6, ease: "easeOut" }}
-          className="group relative bg-[#020202] p-12 md:p-16 hover:bg-zinc-900/40 transition-all duration-500 overflow-hidden"
-        >
-          <div className="absolute top-0 left-0 w-[1px] h-full bg-cyan-500/0 group-hover:bg-cyan-500/50 transition-all" />
-          <div className="flex justify-between items-start mb-12">
-            <div className="font-mono text-[10px] text-cyan-500/50 group-hover:text-cyan-400 transition-colors">
-              IDENT: {project.metric.replace(/ /g, '_').toUpperCase()}
-            </div>
-            <div className="w-8 h-8 flex items-center justify-center border border-white/10 group-hover:border-cyan-500/50 group-hover:text-cyan-400 transition-all">
-              <ArrowRight size={14} className="-rotate-45" />
-            </div>
-          </div>
+  const ProjectGrid = ({ projects, cols = 2 }: { projects: typeof PROFESSIONAL_PROJECTS; cols?: 1 | 2 }) => (
+    <div className={`grid ${cols === 2 ? "md:grid-cols-2" : "grid-cols-1"} gap-px bg-white/5 border border-white/5 overflow-hidden`}>
+      {projects.map((project, i) => {
+        const isLinked = project.link && project.link !== "#";
+        const cardClass = "group relative bg-[#020202] p-12 md:p-16 hover:bg-zinc-900/40 transition-all duration-500 overflow-hidden block";
+        const motionProps = {
+          initial: { opacity: 0, y: 30 },
+          whileInView: { opacity: 1, y: 0 },
+          viewport: { once: true, margin: "-50px" },
+          transition: { delay: i * 0.1, duration: 0.6, ease: "easeOut" as const },
+          className: cardClass,
+        };
 
-          <h3 className="text-3xl md:text-4xl font-bold text-white mb-6 tracking-tighter">
-            {project.title.toUpperCase()}
-          </h3>
-          
-          <p className="text-zinc-500 text-lg mb-12 font-light leading-relaxed">
-            {project.description}
-          </p>
+        const cardBody = (
+          <>
+            <div className="absolute top-0 left-0 w-[1px] h-full bg-cyan-500/0 group-hover:bg-cyan-500/50 transition-all" />
+            <div className="flex justify-between items-start mb-12">
+              <div className="font-mono text-[10px] text-cyan-500/50 group-hover:text-cyan-400 transition-colors">
+                IDENT: {project.metric.replace(/ /g, '_').toUpperCase()}
+              </div>
+              <div className="w-8 h-8 flex items-center justify-center border border-white/10 group-hover:border-cyan-500/50 group-hover:text-cyan-400 transition-all">
+                <ArrowRight size={14} className="-rotate-45" />
+              </div>
+            </div>
 
-          <div className="flex flex-wrap gap-x-6 gap-y-2 opacity-40 group-hover:opacity-100 transition-opacity">
-            {project.tags.map((tag) => (
-              <span key={tag} className="font-mono text-[10px] uppercase tracking-widest">
-                {tag}
-              </span>
-            ))}
-          </div>
-        </motion.div>
-      ))}
+            <h3 className="text-3xl md:text-4xl font-bold text-white mb-6 tracking-tighter">
+              {project.title.toUpperCase()}
+            </h3>
+
+            <p className="text-zinc-500 text-lg mb-12 font-light leading-relaxed">
+              {project.description}
+            </p>
+
+            <div className="flex flex-wrap gap-x-6 gap-y-2 opacity-40 group-hover:opacity-100 transition-opacity">
+              {project.tags.map((tag) => (
+                <span key={tag} className="font-mono text-[10px] uppercase tracking-widest">
+                  {tag}
+                </span>
+              ))}
+            </div>
+          </>
+        );
+
+        return isLinked ? (
+          <motion.a key={i} {...motionProps} href={project.link} target="_blank" rel="noopener noreferrer">
+            {cardBody}
+          </motion.a>
+        ) : (
+          <motion.div key={i} {...motionProps}>
+            {cardBody}
+          </motion.div>
+        );
+      })}
     </div>
   );
 
@@ -73,7 +88,7 @@ export default function ProjectsAndStack() {
             [ R&D_CORE_LOGS ]
           </div>
         </div>
-        <ProjectGrid projects={PERSONAL_PROJECTS} />
+        <ProjectGrid projects={PERSONAL_PROJECTS} cols={PERSONAL_PROJECTS.length === 1 ? 1 : 2} />
       </section>
 
       {/* Tech Stack */}
