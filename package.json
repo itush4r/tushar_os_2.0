@@ -9,8 +9,9 @@
     "lint": "next lint",
     "format": "prettier --write \"**/*.{ts,tsx,md,json}\"",
     "format:check": "prettier --check \"**/*.{ts,tsx,md,json}\"",
-    "setup:db": "tsx scripts/setup-indexes.ts",
-    "test:hash-ip": "tsx scripts/test-hash-ip.ts"
+    "setup:db": "tsx --env-file=.env.local scripts/setup-indexes.ts",
+    "test:hash-ip": "tsx scripts/test-hash-ip.ts",
+    "test:rate-limit": "tsx scripts/test-rate-limit-logic.ts"
   },
   "dependencies": {
     "clsx": "^2.1.1",
