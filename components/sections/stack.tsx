@@ -4,25 +4,48 @@ import {
   SectionLabel,
   TechPill,
 } from "@/components/ui";
+import { cn } from "@/lib/utils";
 
-const groups = [
+type Group = {
+  label: string;
+  items: string[];
+  highlight?: boolean;
+};
+
+const groups: Group[] = [
   {
     label: "Frontend",
-    items: ["TypeScript", "React", "Next.js", "Tailwind", "Framer Motion"],
+    items: [
+      "TypeScript",
+      "React",
+      "Next.js",
+      "Tailwind CSS",
+      "JavaScript",
+      "HTML/CSS",
+    ],
   },
   {
     label: "Backend",
-    items: ["Node.js", "Express", "MongoDB", "PostgreSQL", "REST · tRPC"],
+    items: ["Node.js", "REST APIs", "MongoDB", "Zod", "Vitest"],
   },
   {
     label: "AI / LLM",
-    items: ["Gemini", "Zod schemas", "Streaming outputs", "Structured outputs", "RAG"],
+    items: [
+      "Vercel AI SDK",
+      "Google Gemini",
+      "useObject",
+      "Schema-validated outputs",
+      "Streaming",
+    ],
+    highlight: true,
   },
   {
-    label: "DevOps",
-    items: ["Vercel", "GitHub Actions", "Docker", "Linux", "Cloudflare"],
+    label: "Tooling & Deploy",
+    items: ["Git", "Vercel", "CI/CD", "Env config"],
   },
 ];
+
+const exploring = ["RudderStack analytics", "Next.js SSR optimization"];
 
 export function Stack() {
   return (
@@ -35,17 +58,33 @@ export function Stack() {
         <div className="mt-8 grid gap-6 sm:grid-cols-2">
           {groups.map((g) => (
             <div key={g.label}>
-              <p className="text-xs uppercase tracking-wider text-muted">
+              <p
+                className={cn(
+                  "text-xs uppercase tracking-wider",
+                  g.highlight ? "text-accent" : "text-muted",
+                )}
+              >
                 {g.label}
               </p>
               <div className="mt-3 flex flex-wrap gap-2">
                 {g.items.map((item) => (
-                  <TechPill key={item}>{item}</TechPill>
+                  <TechPill
+                    key={item}
+                    className={
+                      g.highlight ? "border-accent/40 text-foreground" : undefined
+                    }
+                  >
+                    {item}
+                  </TechPill>
                 ))}
               </div>
             </div>
           ))}
         </div>
+        <p className="mt-8 border-t border-border pt-4 text-xs text-muted">
+          <span className="uppercase tracking-wider">Currently exploring</span>{" "}
+          — {exploring.join(", ")}
+        </p>
       </Container>
     </Section>
   );
