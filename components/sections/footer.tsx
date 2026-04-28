@@ -50,7 +50,15 @@ export function Footer() {
           </ul>
         </div>
         <p className="mt-8 text-xs text-subtle">
-          © {new Date().getFullYear()} Tushar. Built with Next.js + Tailwind.
+          © {new Date().getFullYear()} Tushar. Built with Next.js + Tailwind ·{" "}
+          <a
+            href="https://github.com/itush4r/tushar_os_2.0"
+            target="_blank"
+            rel="noreferrer noopener"
+            className="underline-offset-2 hover:text-muted hover:underline"
+          >
+            view source
+          </a>
         </p>
       </Container>
     </footer>
