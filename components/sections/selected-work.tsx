@@ -1,4 +1,4 @@
-import { ArrowUpRight, Cpu, Github, Lock, Mail } from "lucide-react";
+import { ArrowUpRight, Cpu, ExternalLink, Github, Lock, Mail } from "lucide-react";
 import {
   Card,
   Container,
@@ -139,15 +139,27 @@ export function SelectedWork() {
                   </li>
                 </ul>
               </div>
-              <a
-                href="https://github.com/itush4r"
-                target="_blank"
-                rel="noreferrer noopener"
-                aria-label="View on GitHub"
-                className="rounded-full border border-border p-2 text-muted transition-colors hover:border-muted/50 hover:text-foreground"
-              >
-                <Github className="h-4 w-4" />
-              </a>
+              <div className="flex shrink-0 items-center gap-2">
+                <a
+                  href="https://bh4i-bot.vercel.app/"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  aria-label="Open BH4i landing page and try the bot"
+                  title="Try BH4i"
+                  className="rounded-full border border-border p-2 text-muted transition-colors hover:border-muted/50 hover:text-foreground"
+                >
+                  <ExternalLink className="h-4 w-4" />
+                </a>
+                <a
+                  href="https://github.com/itush4r"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  aria-label="View on GitHub"
+                  className="rounded-full border border-border p-2 text-muted transition-colors hover:border-muted/50 hover:text-foreground"
+                >
+                  <Github className="h-4 w-4" />
+                </a>
+              </div>
             </div>
           </Card>
         </div>
