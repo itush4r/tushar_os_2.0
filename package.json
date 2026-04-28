@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "@ai-sdk/google": "^3.0.64",
+    "@ai-sdk/react": "^3.0.170",
     "@google/generative-ai": "^0.24.1",
     "ai": "^6.0.168",
     "clsx": "^2.1.1",
@@ -25,6 +26,7 @@
     "next": "14.2.33",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-markdown": "^10.1.0",
     "tailwind-merge": "^2.5.4",
     "zod": "^3.23.8"
   },

@@ -1,4 +1,4 @@
-import { streamText, type ModelMessage } from "ai";
+import { convertToModelMessages, streamText, type UIMessage } from "ai";
 
 import { google } from "@/lib/ai-sdk-google";
 import { NextRequest, NextResponse } from "next/server";
@@ -14,18 +14,45 @@ import { normalizeQuestion } from "@/lib/schemas/chat-analytics";
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
-const bodySchema = z.object({
-  messages: z
+// We accept two shapes:
+// 1. Simple: { role, content } — what an external curl/test would send.
+// 2. UI: { role, parts: [{type:'text', text}] } — what useChat from
+//    @ai-sdk/react sends. Normalized below before reaching the model.
+const simpleMessage = z.object({
+  role: z.enum(["user", "assistant"]),
+  content: z.string().min(1).max(2000),
+});
+
+const uiMessage = z.object({
+  id: z.string().optional(),
+  role: z.enum(["user", "assistant", "system"]),
+  parts: z
     .array(
       z.object({
-        role: z.enum(["user", "assistant"]),
-        content: z.string().min(1).max(2000),
+        type: z.string(),
+        text: z.string().optional(),
       }),
     )
-    .min(1)
-    .max(40),
+    .min(1),
+});
+
+const bodySchema = z.object({
+  id: z.string().optional(),
+  messages: z.array(z.union([simpleMessage, uiMessage])).min(1).max(40),
   sessionId: z.string().uuid().optional(),
 });
+
+type ParsedMessage = z.infer<typeof simpleMessage> | z.infer<typeof uiMessage>;
+
+function toSimple(m: ParsedMessage): { role: "user" | "assistant"; content: string } {
+  if ("content" in m) return { role: m.role, content: m.content };
+  const text = m.parts
+    .filter((p) => p.type === "text" && typeof p.text === "string")
+    .map((p) => p.text!)
+    .join("");
+  // Skip system messages from clients; only user/assistant get persisted.
+  return { role: m.role === "system" ? "user" : m.role, content: text };
+}
 
 const MODEL_ID = process.env.GEMINI_MODEL_FLASH ?? "gemini-2.5-flash-lite";
 
@@ -39,16 +66,30 @@ async function handler(req: NextRequest) {
     );
   }
 
-  const { messages, sessionId: providedSessionId } = parsed.data;
+  const { messages: rawMessages, sessionId: providedSessionId } = parsed.data;
+  const messages = rawMessages.map(toSimple).filter((m) => m.content.trim().length > 0);
+  if (messages.length === 0) {
+    return NextResponse.json({ error: "no_text_content" }, { status: 400 });
+  }
   const sessionId = providedSessionId ?? crypto.randomUUID();
   const ipHash = hashIp(getClientIp(req));
   const startedAt = new Date();
   const lastUser = [...messages].reverse().find((m) => m.role === "user");
 
+  // Build UIMessages so we can use convertToModelMessages — this is what
+  // streamText expects in v6.
+  const uiMessages: UIMessage[] = messages.map((m, i) => ({
+    id: `${sessionId}-${i}`,
+    role: m.role,
+    parts: [{ type: "text", text: m.content }],
+  }));
+
+  const modelMessages = await convertToModelMessages(uiMessages);
+
   const result = streamText({
     model: google(MODEL_ID),
     system: ABOUT_TUSHAR_SYSTEM_PROMPT,
-    messages: messages as ModelMessage[],
+    messages: modelMessages,
     onFinish: async ({ text }) => {
       try {
         const db = await getDb();
