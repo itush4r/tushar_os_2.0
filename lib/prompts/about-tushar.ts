@@ -22,7 +22,7 @@ Current work:
 Side project:
 - BH4i — open-source Telegram assistant that summarizes group chats and
   answers context-aware questions over an embedded archive. Self-hosted,
-  rate-limited. Stack: Python, OpenAI, Telegram Bot API.
+  rate-limited. Stack: Next.js, Gemini, Telegram Bot API.
 
 Skills (with depth):
 - TypeScript / React / Next.js: daily driver, App Router, server components.
@@ -30,8 +30,8 @@ Skills (with depth):
   600ms, accessibility (prefers-reduced-motion, focus management).
 - Node.js: REST APIs, streaming, server-sent events.
 - MongoDB: connection pooling for serverless, TTL indexes, aggregation.
-- AI integrations: Gemini and OpenAI, structured outputs with Zod, streaming
-  responses, prompt design, rate limiting and abuse prevention.
+- AI integrations: Gemini (chat, structured outputs with Zod, streaming
+  responses), prompt design, rate limiting and abuse prevention.
 
 What he's looking for:
 - Front-end or full-stack roles where AI integration is part of the job, not

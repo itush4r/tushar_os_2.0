@@ -16,7 +16,7 @@ const groups = [
   },
   {
     label: "AI / LLM",
-    items: ["Gemini", "OpenAI", "Zod schemas", "Streaming", "RAG"],
+    items: ["Gemini", "Zod schemas", "Streaming outputs", "Structured outputs", "RAG"],
   },
   {
     label: "DevOps",
