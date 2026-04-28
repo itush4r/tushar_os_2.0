@@ -11,9 +11,11 @@
     "format:check": "prettier --check \"**/*.{ts,tsx,md,json}\"",
     "setup:db": "tsx --env-file=.env.local scripts/setup-indexes.ts",
     "test:hash-ip": "tsx scripts/test-hash-ip.ts",
-    "test:rate-limit": "tsx scripts/test-rate-limit-logic.ts"
+    "test:rate-limit": "tsx scripts/test-rate-limit-logic.ts",
+    "test:gemini": "tsx --env-file=.env.local scripts/test-gemini.ts"
   },
   "dependencies": {
+    "@google/generative-ai": "^0.24.1",
     "clsx": "^2.1.1",
     "framer-motion": "^11.11.17",
     "lucide-react": "^0.460.0",
