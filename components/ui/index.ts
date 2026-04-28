@@ -5,3 +5,5 @@ export { TechPill } from "./tech-pill";
 export { Card } from "./card";
 export { FeaturedCard } from "./featured-card";
 export { MetricStat } from "./metric-stat";
+export { Reveal } from "./reveal";
+export { CountUp } from "./count-up";

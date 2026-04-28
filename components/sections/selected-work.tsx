@@ -4,6 +4,7 @@ import {
   Container,
   FeaturedCard,
   MetricStat,
+  Reveal,
   Section,
   SectionLabel,
   TechPill,
@@ -49,7 +50,7 @@ export function SelectedWork() {
             </div>
 
             <div className="mt-6 grid grid-cols-3 gap-4 border-t border-border pt-5">
-              <MetricStat value="95%" label="Faster Drafts" />
+              <MetricStat value="95%" label="Faster Drafts" countTo={95} countSuffix="%" />
               <MetricStat value="7→1" label="Form Fields" />
               <MetricStat value="Live" label="Demo below" />
             </div>
