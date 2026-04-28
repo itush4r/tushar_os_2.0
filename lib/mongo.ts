@@ -1,7 +1,14 @@
-import { Db, MongoClient } from "mongodb";
+import { Db, MongoClient, MongoClientOptions } from "mongodb";
 
 const uri = process.env.MONGODB_URI;
 const dbName = process.env.MONGODB_DB ?? "portfolio";
+
+const clientOptions: MongoClientOptions = {
+  maxPoolSize: 5,
+  minPoolSize: 0,
+  maxIdleTimeMS: 60_000,
+  serverSelectionTimeoutMS: 5_000,
+};
 
 declare global {
   // eslint-disable-next-line no-var
@@ -12,24 +19,15 @@ function clientPromise(): Promise<MongoClient> {
   if (!uri) {
     throw new Error("MONGODB_URI is not set");
   }
-
-  if (process.env.NODE_ENV === "development") {
-    if (!global._mongoClientPromise) {
-      global._mongoClientPromise = new MongoClient(uri).connect();
-    }
-    return global._mongoClientPromise;
+  if (!global._mongoClientPromise) {
+    global._mongoClientPromise = new MongoClient(uri, clientOptions).connect();
   }
-
-  return new MongoClient(uri).connect();
+  return global._mongoClientPromise;
 }
 
-let cachedDb: Db | null = null;
-
 export async function getDb(): Promise<Db> {
-  if (cachedDb) return cachedDb;
   const client = await clientPromise();
-  cachedDb = client.db(dbName);
-  return cachedDb;
+  return client.db(dbName);
 }
 
 export const collections = {
