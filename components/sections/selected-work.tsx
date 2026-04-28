@@ -8,6 +8,7 @@ import {
   SectionLabel,
   TechPill,
 } from "@/components/ui";
+import { PromptToFormDemo } from "@/components/ai/prompt-to-form";
 
 export function SelectedWork() {
   return (
@@ -50,7 +51,11 @@ export function SelectedWork() {
             <div className="mt-6 grid grid-cols-3 gap-4 border-t border-border pt-5">
               <MetricStat value="95%" label="Faster Drafts" />
               <MetricStat value="7→1" label="Form Fields" />
-              <MetricStat value="Live" label="Demo on /work" />
+              <MetricStat value="Live" label="Demo below" />
+            </div>
+
+            <div className="mt-6">
+              <PromptToFormDemo />
             </div>
           </FeaturedCard>
 
