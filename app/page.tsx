@@ -9,6 +9,7 @@ import {
   Stack,
   TopNav,
 } from "@/components/sections";
+import { Reveal } from "@/components/ui";
 
 export default function HomePage() {
   return (
@@ -16,11 +17,21 @@ export default function HomePage() {
       <TopNav />
       <main>
         <Hero />
-        <SelectedWork />
-        <JDMatcher />
-        <Stack />
-        <About />
-        <Guestbook />
+        <Reveal>
+          <SelectedWork />
+        </Reveal>
+        <Reveal>
+          <JDMatcher />
+        </Reveal>
+        <Reveal>
+          <Stack />
+        </Reveal>
+        <Reveal>
+          <About />
+        </Reveal>
+        <Reveal>
+          <Guestbook />
+        </Reveal>
       </main>
       <Footer />
       <ChatWidget />

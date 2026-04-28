@@ -1,4 +1,9 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import Link from "next/link";
+
+import { cn } from "@/lib/utils";
 
 const links = [
   { href: "#work", label: "work" },
@@ -7,8 +12,30 @@ const links = [
 ];
 
 export function TopNav() {
+  const [hidden, setHidden] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    let lastY = window.scrollY;
+    const onScroll = () => {
+      const y = window.scrollY;
+      setScrolled(y > 8);
+      if (y > 80 && y > lastY) setHidden(true);
+      else setHidden(false);
+      lastY = y;
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   return (
-    <header className="sticky top-0 z-40 w-full backdrop-blur-md">
+    <header
+      className={cn(
+        "sticky top-0 z-40 w-full transition-transform duration-300",
+        hidden && "-translate-y-full",
+        scrolled && "border-b border-border/60 backdrop-blur-md",
+      )}
+    >
       <div className="mx-auto flex h-14 w-full max-w-container items-center justify-between px-6">
         <Link
           href="/"
