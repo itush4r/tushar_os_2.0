@@ -1,0 +1,10 @@
+{
+  "name": "Tushar — Full Stack Engineer",
+  "short_name": "Tushar",
+  "description": "Full-stack engineer building production AI interfaces.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0a0a",
+  "theme_color": "#0a0a0a",
+  "icons": []
+}
