@@ -1,4 +1,5 @@
 import { ChatWidget } from "@/components/ai/chat-widget";
+import { JDMatcher } from "@/components/ai/jd-matcher";
 import {
   About,
   Footer,
@@ -15,6 +16,7 @@ export default function HomePage() {
       <main>
         <Hero />
         <SelectedWork />
+        <JDMatcher />
         <Stack />
         <About />
       </main>
