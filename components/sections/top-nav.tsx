@@ -44,12 +44,12 @@ export function TopNav() {
           tushar
         </Link>
         <nav>
-          <ul className="flex items-center gap-6">
+          <ul className="flex items-center gap-1 sm:gap-3">
             {links.map((link) => (
               <li key={link.href}>
                 <a
                   href={link.href}
-                  className="text-sm text-muted transition-colors hover:text-foreground"
+                  className="inline-flex h-11 items-center px-2 text-sm text-muted transition-colors hover:text-foreground"
                 >
                   {link.label}
                 </a>

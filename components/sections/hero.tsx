@@ -53,7 +53,7 @@ export function Hero() {
           >
             <a
               href="#work"
-              className="inline-flex items-center gap-2 rounded-full bg-foreground px-4 py-2 text-sm font-medium text-background transition-opacity hover:opacity-90"
+              className="inline-flex h-11 items-center gap-2 rounded-full bg-foreground px-5 text-sm font-medium text-background transition-opacity hover:opacity-90"
             >
               View work
               <ArrowRight className="h-4 w-4" />
@@ -61,7 +61,7 @@ export function Hero() {
             <a
               href="/resume.pdf"
               download
-              className="inline-flex items-center gap-2 rounded-full border border-border bg-surface px-4 py-2 text-sm font-medium text-foreground transition-colors hover:border-muted/50"
+              className="inline-flex h-11 items-center gap-2 rounded-full border border-border bg-surface px-5 text-sm font-medium text-foreground transition-colors hover:border-muted/50"
             >
               <Download className="h-4 w-4" />
               Resume
