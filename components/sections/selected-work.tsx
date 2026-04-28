@@ -69,7 +69,8 @@ export function SelectedWork() {
                 <div className="mt-4 flex flex-wrap gap-2">
                   <TechPill>React</TechPill>
                   <TechPill>Next.js</TechPill>
-                  <TechPill>Node</TechPill>
+                  <TechPill>Tailwind</TechPill>
+                  <TechPill>TypeScript</TechPill>
                 </div>
               </div>
             </div>
@@ -129,7 +130,7 @@ export function SelectedWork() {
                     <Cpu className="mt-0.5 h-3.5 w-3.5 shrink-0 text-amber-400/80" />
                     <span className="italic">
                       <span className="not-italic text-foreground/90">Phone agent</span>
-                      <span className="ml-2 inline-flex items-center rounded-full border border-amber-400/30 bg-amber-400/10 px-1.5 py-0.5 text-[10px] not-italic uppercase tracking-wider text-amber-300">
+                      <span className="ml-2 inline-flex items-center rounded-full border border-amber-400/30 bg-amber-400/10 px-1.5 py-0.5 text-[10px] uppercase not-italic tracking-wider text-amber-300">
                         Experimental
                       </span>{" "}
                       — natural-language Android control via Gemini Vision over an ADB bridge. In
