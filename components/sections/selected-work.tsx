@@ -39,7 +39,7 @@ export function SelectedWork() {
 
             <div className="mt-5 flex flex-wrap gap-2">
               <TechPill>Next.js</TechPill>
-              <TechPill>Gemini</TechPill>
+              <TechPill>Vercel AI SDK</TechPill>
               <TechPill>Zod</TechPill>
               <TechPill>MongoDB</TechPill>
             </div>
