@@ -1,7 +1,7 @@
 "use client";
 
 import { experimental_useObject as useObject } from "@ai-sdk/react";
-import { Check, Shuffle, Sparkles } from "lucide-react";
+import { Check, Shuffle, Sparkles, Wand2 } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
 import { cn } from "@/lib/utils";
@@ -110,9 +110,17 @@ export function PromptToFormDemo() {
         <button
           onClick={() => go(prompt)}
           disabled={isLoading || !prompt.trim()}
-          className="rounded-lg bg-foreground px-3 py-2 text-sm font-medium text-background transition-opacity hover:opacity-90 disabled:opacity-40"
+          aria-label="Generate"
+          className="inline-flex shrink-0 items-center justify-center rounded-lg bg-foreground px-3 py-2 text-sm font-medium text-background transition-opacity hover:opacity-90 disabled:opacity-40"
         >
-          {isLoading ? "..." : "Generate"}
+          {isLoading ? (
+            <span aria-hidden="true">...</span>
+          ) : (
+            <>
+              <Wand2 className="h-4 w-4 sm:hidden" aria-hidden="true" />
+              <span className="hidden sm:inline">Generate</span>
+            </>
+          )}
         </button>
         <button
           onClick={surprise}
