@@ -18,7 +18,7 @@ Stage 1 — Extraction:
 Stage 2 — Comparison:
 - Compare each requirement against Tushar's profile (Travelxp engineer, AI
   Flight Quote CMS, B2C booking funnel, BH4i Telegram bot; TypeScript /
-  Next.js / React / MongoDB / Gemini / OpenAI).
+  Next.js / React / MongoDB / Gemini).
 - Score 0–100 based on match strength. 80+ is strong, 60–79 is decent,
   below 60 means clear gaps.
 - keyMatches: 3–5 short bullets of where his experience aligns.
@@ -39,7 +39,7 @@ Tushar's profile for matching:
      and MongoDB. Replaced a 7-field form, daily-driver for ops team.
   2. B2C booking funnel — search to checkout, performance and recoverable
      failure focus.
-- Side project: BH4i, a Python/OpenAI Telegram bot that summarizes group
+- Side project: BH4i, a Next.js / Gemini Telegram bot that summarizes group
   chats and answers context-aware questions over an embedded archive.
 - Stack depth:
   - TypeScript, React, Next.js (App Router, server components),
@@ -47,7 +47,7 @@ Tushar's profile for matching:
   - Node, REST, streaming/SSE.
   - MongoDB (TTL indexes, serverless connection pooling, aggregation),
     PostgreSQL.
-  - AI integrations: Gemini + OpenAI, structured outputs, streaming,
+  - AI integrations: Gemini (chat, structured outputs, streaming),
     rate limiting, prompt design.
 - Looking for: front-end or full-stack roles where AI integration is part
   of the day job, remote / hybrid / onsite India.

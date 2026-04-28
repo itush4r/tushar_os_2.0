@@ -24,17 +24,12 @@ export function SelectedWork() {
           <FeaturedCard>
             <div className="flex items-start justify-between gap-4">
               <div>
-                <p className="text-xs uppercase tracking-wider text-accent">
-                  Featured · Travelxp
-                </p>
-                <h3 className="mt-2 text-lg font-medium text-foreground">
-                  AI Flight Quote CMS
-                </h3>
+                <p className="text-xs uppercase tracking-wider text-accent">Featured · Travelxp</p>
+                <h3 className="mt-2 text-lg font-medium text-foreground">AI Flight Quote CMS</h3>
                 <p className="mt-2 max-w-[55ch] text-sm leading-relaxed text-muted">
-                  Internal CMS that turns plain-English prompts into
-                  structured flight-quote drafts. Replaced a 7-field form with
-                  a single textarea and shipped a measurable speed-up to the
-                  ops team.
+                  Internal CMS that turns plain-English prompts into structured flight-quote drafts.
+                  Replaced a 7-field form with a single textarea and shipped a measurable speed-up
+                  to the ops team.
                 </p>
               </div>
               <span className="hidden rounded-full border border-border px-2 py-1 text-[11px] uppercase tracking-wider text-muted sm:inline-block">
@@ -63,16 +58,13 @@ export function SelectedWork() {
           <Card>
             <div className="flex items-start justify-between gap-4">
               <div>
-                <p className="text-xs uppercase tracking-wider text-muted">
-                  Travelxp
-                </p>
+                <p className="text-xs uppercase tracking-wider text-muted">Travelxp</p>
                 <h3 className="mt-2 text-base font-medium text-foreground">
                   Travelxp B2C Booking Platform
                 </h3>
                 <p className="mt-2 max-w-[55ch] text-sm leading-relaxed text-muted">
-                  End-user booking flows for flights and packages. Owned the
-                  React side of the funnel from search to checkout, focused on
-                  performance and recoverable failures.
+                  End-user booking flows for flights and packages. Owned the React side of the
+                  funnel from search to checkout, focused on performance and recoverable failures.
                 </p>
                 <div className="mt-4 flex flex-wrap gap-2">
                   <TechPill>React</TechPill>
@@ -86,20 +78,17 @@ export function SelectedWork() {
           <Card>
             <div className="flex items-start justify-between gap-4">
               <div>
-                <p className="text-xs uppercase tracking-wider text-muted">
-                  Side Project
-                </p>
+                <p className="text-xs uppercase tracking-wider text-muted">Side Project</p>
                 <h3 className="mt-2 text-base font-medium text-foreground">
                   BH4i — AI Telegram Assistant
                 </h3>
                 <p className="mt-2 max-w-[55ch] text-sm leading-relaxed text-muted">
-                  Telegram bot that summarizes group chats and answers
-                  context-aware questions over an embedded archive. Self-hosted,
-                  rate-limited, fully open source.
+                  Telegram bot that summarizes group chats and answers context-aware questions over
+                  an embedded archive. Self-hosted, rate-limited, fully open source.
                 </p>
                 <div className="mt-4 flex flex-wrap gap-2">
-                  <TechPill>Python</TechPill>
-                  <TechPill>OpenAI</TechPill>
+                  <TechPill>Nextjs</TechPill>
+                  <TechPill>Gemini</TechPill>
                   <TechPill>Telegram</TechPill>
                 </div>
               </div>
