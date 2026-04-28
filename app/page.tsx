@@ -1,3 +1,4 @@
+import { ChatWidget } from "@/components/ai/chat-widget";
 import {
   About,
   Footer,
@@ -18,6 +19,7 @@ export default function HomePage() {
         <About />
       </main>
       <Footer />
+      <ChatWidget />
     </>
   );
 }
