@@ -1,10 +1,16 @@
-import { ArrowUpRight, Cpu, ExternalLink, Github, Lock, Mail } from "lucide-react";
+import {
+  ArrowUpRight,
+  Cpu,
+  ExternalLink,
+  Github,
+  Lock,
+  Mail,
+} from "lucide-react";
 import {
   Card,
   Container,
   FeaturedCard,
   MetricStat,
-  Reveal,
   Section,
   SectionLabel,
   TechPill,
@@ -17,8 +23,13 @@ export function SelectedWork() {
       <Container>
         <SectionLabel>Selected Work</SectionLabel>
         <h2 className="mt-3 text-2xl font-semibold text-foreground sm:text-3xl">
-          Three projects worth showing.
+          Things I&apos;ve shipped to production.
         </h2>
+        <p className="mt-3 max-w-[60ch] text-sm leading-relaxed text-muted">
+          Booking funnels, OTT subscription flows, and the internal CMS tooling
+          that runs both — most built on the same Next.js + MongoDB stack at
+          Travelxp.
+        </p>
 
         <div className="mt-8 space-y-5">
           <FeaturedCard>
@@ -60,17 +71,123 @@ export function SelectedWork() {
               <div>
                 <p className="text-xs uppercase tracking-wider text-muted">Travelxp</p>
                 <h3 className="mt-2 text-base font-medium text-foreground">
-                  Travelxp B2C Booking Platform
+                  Travelxp B2C Platform
                 </h3>
-                <p className="mt-2 max-w-[55ch] text-sm leading-relaxed text-muted">
-                  End-user booking flows for flights and packages. Owned the React side of the
-                  funnel from search to checkout, focused on performance and recoverable failures.
+                <p className="mt-2 max-w-[60ch] text-sm leading-relaxed text-muted">
+                  End-to-end booking and OTT product surface for travelxp.com — the consumer
+                  side of every vertical the company sells.
+                </p>
+                <ul className="mt-3 max-w-[60ch] list-disc space-y-1.5 pl-5 text-sm leading-relaxed text-muted marker:text-muted/60">
+                  <li>
+                    Next.js SSR for hotel, flight, and package discovery pages tuned for
+                    cold-load performance and crawlability.
+                  </li>
+                  <li>
+                    10+ backend and third-party SDK integrations woven through the funnel —
+                    Wotnot, RudderStack, payments, internal pricing services.
+                  </li>
+                  <li>
+                    OTT subscription-aware UI gated on real-time entitlement APIs, so the
+                    same surface adapts to free, trial, and paid users without re-routing.
+                  </li>
+                </ul>
+                <div className="mt-4 flex flex-wrap gap-2">
+                  <TechPill>Next.js</TechPill>
+                  <TechPill>React</TechPill>
+                  <TechPill>TypeScript</TechPill>
+                  <TechPill>Tailwind</TechPill>
+                  <TechPill>MongoDB</TechPill>
+                </div>
+              </div>
+            </div>
+          </Card>
+
+          <div className="grid gap-5 md:grid-cols-2">
+            <Card>
+              <p className="text-xs uppercase tracking-wider text-muted">Travelxp · CMS</p>
+              <h3 className="mt-2 text-base font-medium text-foreground">
+                Visual Page-Builder CMS
+              </h3>
+              <p className="mt-2 text-sm leading-relaxed text-muted">
+                Drag-and-drop builder with schema-driven persistence, paired with a B2C
+                SSR renderer that deserializes builder configs back into live pages —
+                same source of truth, two surfaces.
+              </p>
+              <div className="mt-4 flex flex-wrap gap-2">
+                <TechPill>Next.js</TechPill>
+                <TechPill>React DnD</TechPill>
+                <TechPill>Zod</TechPill>
+                <TechPill>MongoDB</TechPill>
+              </div>
+            </Card>
+
+            <Card>
+              <p className="text-xs uppercase tracking-wider text-muted">Travelxp · Ops</p>
+              <h3 className="mt-2 text-base font-medium text-foreground">
+                Manual Booking & Parity Layer
+              </h3>
+              <p className="mt-2 text-sm leading-relaxed text-muted">
+                Single operator-facing form covering every vertical, with a real-time
+                B2C ↔ CMS parity layer so what an agent sees and what a customer sees
+                never drift.
+              </p>
+              <div className="mt-4 flex flex-wrap gap-2">
+                <TechPill>Next.js</TechPill>
+                <TechPill>TypeScript</TechPill>
+                <TechPill>WebSockets</TechPill>
+                <TechPill>MongoDB</TechPill>
+              </div>
+            </Card>
+
+            <Card>
+              <p className="text-xs uppercase tracking-wider text-muted">Travelxp · OTT</p>
+              <h3 className="mt-2 text-base font-medium text-foreground">
+                Video Asset Management UI
+              </h3>
+              <p className="mt-2 text-sm leading-relaxed text-muted">
+                Operator dashboard for the OTT encoding pipeline — a clear async state
+                machine (queued → processing → ready → failed) so producers know what is
+                shippable without pinging engineering.
+              </p>
+              <div className="mt-4 flex flex-wrap gap-2">
+                <TechPill>Next.js</TechPill>
+                <TechPill>React Query</TechPill>
+                <TechPill>FFmpeg pipeline</TechPill>
+              </div>
+            </Card>
+
+            <Card>
+              <p className="text-xs uppercase tracking-wider text-muted">Travelxp · Growth</p>
+              <h3 className="mt-2 text-base font-medium text-foreground">
+                Coupon System & Ops Dashboards
+              </h3>
+              <p className="mt-2 text-sm leading-relaxed text-muted">
+                Coupon configuration UI and the matching B2C application UX, plus
+                role-aware admin tables with server-side pagination for the broader
+                ops surface.
+              </p>
+              <div className="mt-4 flex flex-wrap gap-2">
+                <TechPill>Next.js</TechPill>
+                <TechPill>RBAC</TechPill>
+                <TechPill>MongoDB</TechPill>
+              </div>
+            </Card>
+          </div>
+
+          <Card>
+            <div className="flex items-start justify-between gap-4">
+              <div>
+                <p className="text-xs uppercase tracking-wider text-muted">Travelxp · Sister product</p>
+                <h3 className="mt-2 text-base font-medium text-foreground">Foodxp CMS</h3>
+                <p className="mt-2 max-w-[60ch] text-sm leading-relaxed text-muted">
+                  Content management for Travelxp&apos;s food-and-travel sister product,
+                  built on the same Next.js + MongoDB infrastructure as the core CMS so
+                  the two share auth, deploy, and component primitives.
                 </p>
                 <div className="mt-4 flex flex-wrap gap-2">
-                  <TechPill>React</TechPill>
                   <TechPill>Next.js</TechPill>
+                  <TechPill>MongoDB</TechPill>
                   <TechPill>Tailwind</TechPill>
-                  <TechPill>TypeScript</TechPill>
                 </div>
               </div>
             </div>

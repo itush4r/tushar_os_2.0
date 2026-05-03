@@ -35,16 +35,17 @@ export function Hero() {
             transition={transition}
             className="mt-6 text-4xl font-semibold tracking-tight text-foreground sm:text-5xl"
           >
-            Building production AI interfaces that ship.
+            Production AI in real product surfaces.
           </motion.h1>
           <motion.p
             variants={stagger}
             transition={transition}
             className="mt-5 max-w-[60ch] text-base leading-relaxed text-muted"
           >
-            I design and build real-world products that pair clean front-end craft
-            with practical AI integrations — from CMS tooling and recruiter
-            assistants to chat interfaces that actually answer the question.
+            Full-stack engineer at Travelxp, shipping the booking funnels,
+            OTT subscription flows, and internal CMS tooling that the business
+            runs on — with practical AI woven into the surfaces that benefit
+            from it.
           </motion.p>
           <motion.div
             variants={stagger}
