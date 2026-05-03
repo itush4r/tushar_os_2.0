@@ -96,7 +96,6 @@ export function SelectedWork() {
                   <TechPill>React</TechPill>
                   <TechPill>TypeScript</TechPill>
                   <TechPill>Tailwind</TechPill>
-                  <TechPill>MongoDB</TechPill>
                 </div>
               </div>
             </div>
@@ -115,9 +114,8 @@ export function SelectedWork() {
               </p>
               <div className="mt-4 flex flex-wrap gap-2">
                 <TechPill>Next.js</TechPill>
-                <TechPill>React DnD</TechPill>
-                <TechPill>Zod</TechPill>
-                <TechPill>MongoDB</TechPill>
+                <TechPill>TypeScript</TechPill>
+                  <TechPill>Tailwind</TechPill>
               </div>
             </Card>
 
@@ -134,8 +132,6 @@ export function SelectedWork() {
               <div className="mt-4 flex flex-wrap gap-2">
                 <TechPill>Next.js</TechPill>
                 <TechPill>TypeScript</TechPill>
-                <TechPill>WebSockets</TechPill>
-                <TechPill>MongoDB</TechPill>
               </div>
             </Card>
 
@@ -151,8 +147,9 @@ export function SelectedWork() {
               </p>
               <div className="mt-4 flex flex-wrap gap-2">
                 <TechPill>Next.js</TechPill>
-                <TechPill>React Query</TechPill>
-                <TechPill>FFmpeg pipeline</TechPill>
+                <TechPill>TypeScript</TechPill>
+                  <TechPill>Tailwind</TechPill>
+                  <TechPill>Shaka Player</TechPill>
               </div>
             </Card>
 
@@ -168,8 +165,6 @@ export function SelectedWork() {
               </p>
               <div className="mt-4 flex flex-wrap gap-2">
                 <TechPill>Next.js</TechPill>
-                <TechPill>RBAC</TechPill>
-                <TechPill>MongoDB</TechPill>
               </div>
             </Card>
           </div>
@@ -186,7 +181,6 @@ export function SelectedWork() {
                 </p>
                 <div className="mt-4 flex flex-wrap gap-2">
                   <TechPill>Next.js</TechPill>
-                  <TechPill>MongoDB</TechPill>
                   <TechPill>Tailwind</TechPill>
                 </div>
               </div>
